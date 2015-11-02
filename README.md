@@ -1,10 +1,10 @@
-Project Caribou Writeup
+Project Caribou
 =======================
 *Mafalda Borges, Ian Hill, and Liani Lye*
 
 ROS package that enables a Neato to recognize a stop sign and avoid other Neatos.
 
-Video Demo: <link>
+**Video Demo:** [NEATO OBEYS STOP SIGNS](https://www.youtube.com/watch?v=WqaiuiBEuHQ)
 
 ## Objective
 In our CompRobo Computer Vision project, we wanted our robot to behave like a very simple self-driving car. We intended that the robot would:
@@ -28,7 +28,7 @@ Colorspace was converted to hue, saturation, and value.
 A filter that only selects red objects was applied.
 A Gaussian blur was applied to the subsequent image, allowing for more continuous contours to be more readily found.
 Canny edge detection was used to detect of the stop sign including the word stop.
-The edges were merged together using the morphology transform morphologyEx to create closed polygons.
+The edges were merged together using the morphology transform ```morphologyEx``` to create closed polygons.
 Contours were found using approxPolyDP.
 The found contours were looped over and if the approximated contour has 8 points,we returned that an octagon was found.
 All octagons that had an area below 10,000 pixels were ignored.
